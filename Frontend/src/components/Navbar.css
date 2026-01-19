@@ -1,0 +1,426 @@
+:root {
+  --primary-color: #2d5016;
+  --secondary-color: #4a7c2c;
+  --accent-color: #6fa86f;
+  --text-color: #333;
+  --bg-color: #fff;
+  --border-color: #e0e0e0;
+  --hover-bg: #f5f5f5;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+  background: #ffffff; /* Changed to white */
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1100;
+  box-shadow: none; /* Removed shadow */
+  width: 100vw;
+  left: 0;
+}
+
+.main-navbar {
+  background-color: var(--bg-color);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+  gap: 2rem; /* Add gap between sections */
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align to the left */
+  margin-right: auto; /* Push everything else to the right */
+  flex-shrink: 0;
+}
+
+.navbar-logo a {
+  color: #2d5016;
+  text-decoration: none;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  font-weight: 900;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.logo-text {
+  color: #2d5016;
+  font-size: 2rem;
+  font-weight: 900;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  white-space: nowrap;
+  opacity: 1 !important;
+  visibility: visible !important;
+  margin-left: 1.5rem;
+}
+
+.navbar-logo .logo-text {
+  color: #2d5016;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  margin: 0 auto; /* Center horizontally */
+  padding: 0;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  flex: 1; /* Take available space to center properly */
+}
+
+.nav-item {
+  height: 80px;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center; /* Vertical center */
+  justify-content: center; /* Horizontal center */
+  position: relative;
+}
+
+.nav-link {
+  color: #2d5016;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.3rem;
+  transition: all 0.3s ease;
+  padding: 0.5rem 0;
+  border-bottom: 2px solid transparent;
+  display: flex;
+  align-items: center; /* Vertical center */
+  height: 100%;
+  padding: 0 1rem;
+}
+
+.nav-link:hover {
+  color: #6fa86f;
+  border-bottom-color: transparent;
+}
+
+.nav-links {
+  color: #2d5016;
+  display: flex;
+  align-items: center; /* Vertical center */
+  justify-content: center; /* Horizontal center */
+  padding: 0.5rem 1rem;
+  height: 100%;
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  text-decoration: none !important;
+}
+
+.nav-links:hover {
+  color: #6fa86f;
+  transition: all 0.3s ease;
+}
+
+/* Remove the conflicting styles */
+.nav-links.active,
+.nav-item .active {
+  color: #4a7c2c !important;
+  text-decoration: underline !important;
+  text-decoration-color: #4a7c2c !important;
+  text-underline-offset: 4px !important;
+  font-weight: 700;
+}
+
+/* Only add underline for active state */
+.nav-links.active {
+  text-decoration: underline !important;
+  text-decoration-color: #4a7c2c !important;
+  text-underline-offset: 4px !important;
+  font-weight: 600;
+}
+
+/* Clear any existing active styles that might be interfering */
+.nav-links.active::after {
+  display: none; /* Remove any pseudo-element underlines */
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-left: 0; /* Remove auto margin to let flex handle spacing */
+}
+
+/* Enhanced Right section */
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.login-button {
+  background-color: transparent;
+  color: #0f2d1a; /* Changed from #fff to dark green */
+  border: 1px solid #0f2d1a; /* Changed from #fff to dark green */
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+/* Enhance login button */
+.login-button {
+  background-color: #0f2d1a;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 5px;
+  margin-right: 0 !important; /* Override inline style */
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.login-button:hover {
+  background-color: #1a4d2e;
+  color: white !important; /* Enforce white text on hover */
+  text-decoration: none !important; /* Prevent underline on hover */
+}
+
+.login-btn {
+  background-color: #ffffff;
+  color: #2e7d32;
+  border: 2px solid #2e7d32;
+  border-radius: 6px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+  margin-right: 1rem;
+}
+
+.login-btn:hover {
+  background-color: #0f2d1a;
+  color: #ffffff;
+  border-color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(111, 168, 111, 0.3);
+}
+
+.login-btn:focus {
+  outline: none; /* Remove blue outline on focus */
+  box-shadow: none; /* Remove blue focus shadow */
+}
+
+.login-btn:active {
+  outline: none; /* Remove blue outline on click */
+  transform: translateY(0);
+}
+
+.register-button {
+  background-color: transparent;
+  color: #0f2d1a;
+  border: 2px solid #0f2d1a;
+  padding: 8px 15px;
+  border-radius: 5px;
+  margin-right: 15px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+/* Add styling for the new Register button */
+.register-button {
+  background-color: transparent;
+  color: #0f2d1a;
+  border: 2px solid #0f2d1a;
+  padding: 8px 15px;
+  border-radius: 5px;
+  margin-right: 15px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.register-button:hover {
+  background-color: rgba(15, 45, 26, 0.1);
+}
+
+.menu-icon {
+  display: none;
+  color: #0f2d1a; /* Change menu icon to dark green */
+  font-size: 1.8rem;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.menu-icon span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--primary-color);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.menu-icon.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.menu-icon.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-icon.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+.user-greeting {
+  color: #0f2d1a;
+  margin-right: 10px;
+  font-size: 0.9rem;
+}
+
+.logout-button {
+  background-color: transparent;
+  color: #0f2d1a;
+  border: 1px solid #0f2d1a;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #0f2d1a;
+  color: #ffffff;
+}
+
+.dashboard-link {
+  color: #0f2d1a;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 16px;
+  border: 1px solid #9fdf9f;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.dashboard-link:hover {
+  background-color: #9fdf9f;
+  color: #1a4d2e;
+}
+
+.welcome-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 15px;
+  height: 100%;
+}
+
+.welcome-text {
+  font-weight: bold;
+  color: #0f2d1a;
+  margin-bottom: 5px;
+}
+
+.user-email {
+  font-size: 0.8rem;
+  color: #9fdf9f; /* Changed from #666 to a lighter green shade */
+}
+
+/* Remove these divider-related styles */
+.navbar::after,
+.navbar-divider {
+  display: none;
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+  .menu-icon {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 70px;
+    left: -100%;
+    flex-direction: column;
+    background-color: var(--bg-color);
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: var(--shadow);
+    gap: 1rem;
+    padding: 2rem 0;
+    justify-content: flex-start;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .navbar-container {
+    padding: 1rem 1.5rem;
+  }
+
+  .navbar-actions {
+    display: none;
+  }
+
+  .welcome-message {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    padding: 1rem 0;
+    height: auto; /* Added to ensure proper sizing on mobile */
+  }
+
+  .welcome-text,
+  .user-email {
+    color: #fff; /* Changed to white for dark background */
+  }
+}
+
+/* Hide hamburger icon on desktop */
+@media screen and (min-width: 769px) {
+  .menu-icon {
+    display: none !important;
+  }
+}
+
+/* Ensure the nav menu is always visible on desktop */
+@media screen and (min-width: 769px) {
+  .nav-menu {
+    display: flex !important;
+    opacity: 1 !important;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    background-color: transparent !important;
+  }
+}

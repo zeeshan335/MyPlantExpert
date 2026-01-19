@@ -1,0 +1,1330 @@
+.expert-consultation-container {
+  max-width: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 2rem 3rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background-color: #fafafa;
+}
+
+h1,
+h2,
+h3 {
+  color: #2e7d32;
+  margin-bottom: 1.5rem;
+}
+
+h1 {
+  text-align: center;
+  border-bottom: 2px solid #e8f5e9;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* Header section with language toggle button - updated to center the title */
+.header-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+  width: 100%;
+}
+
+.header-section h1 {
+  margin-bottom: 0;
+  border-bottom: none;
+  padding-bottom: 0;
+  text-align: center;
+  flex: 1;
+}
+
+/* Language toggle button */
+.language-toggle {
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  right: 0;
+}
+
+.language-toggle:hover {
+  background-color: #1b5e20;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Actions container (book/view bookings) */
+.actions-container {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.action-btn {
+  background: linear-gradient(135deg, #2e7d32 0%, #1a4d2e 100%);
+  color: white;
+  border: none;
+  padding: 0.875rem 2rem;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.05rem;
+  box-shadow: 0 4px 12px rgba(46, 125, 50, 0.3);
+  transition: all 0.3s ease;
+  min-width: 200px;
+}
+
+.action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(46, 125, 50, 0.4);
+  background: linear-gradient(135deg, #388e3c 0%, #1b5e20 100%);
+}
+
+.action-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(46, 125, 50, 0.3);
+}
+
+/* Success message */
+.success-message {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 500;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Introduction text */
+.intro-text {
+  text-align: center;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.intro-text h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+}
+
+.intro-text p {
+  color: #555;
+  font-size: 1.1rem;
+}
+
+/* Categories container - improved centering */
+.categories-container {
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.categories-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Category grid - better centering with width constraints */
+.category-grid {
+  display: flex;
+  gap: 2rem;
+  padding: 1rem 0;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.category-grid::-webkit-scrollbar {
+  height: 8px;
+}
+
+.category-grid::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.category-grid::-webkit-scrollbar-thumb {
+  background: #2e7d32;
+  border-radius: 4px;
+}
+
+.category-grid::-webkit-scrollbar-thumb:hover {
+  background: #1b5e20;
+}
+
+/* Improved card styling */
+.category-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border: 2px solid #e0e0e0;
+  border-radius: 16px;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 240px;
+  max-width: 240px;
+  min-height: 180px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.category-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #2e7d32 0%, #66bb6a 100%);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(46, 125, 50, 0.2);
+  border-color: #2e7d32;
+}
+
+.category-card:hover::before {
+  transform: scaleX(1);
+}
+
+.card-content h3 {
+  color: #1a4d2e;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.category-description {
+  color: #555;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.card-button {
+  background: linear-gradient(135deg, #2e7d32 0%, #388e3c 100%);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(46, 125, 50, 0.3);
+}
+
+.category-card:hover .card-button {
+  background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(46, 125, 50, 0.4);
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  margin-bottom: 1.5rem;
+  color: #666;
+}
+
+.breadcrumb span {
+  cursor: pointer;
+  color: #2e7d32;
+}
+
+.breadcrumb span:hover {
+  text-decoration: underline;
+}
+
+/* Experts grid */
+.experts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.expert-card {
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e8f5e9;
+}
+
+.expert-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border-color: #a5d6a7;
+}
+
+.expert-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.expert-info {
+  padding: 1.2rem;
+}
+
+.expert-info h3 {
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+}
+
+.specialty,
+.experience,
+.available-slots {
+  margin: 0.5rem 0;
+}
+
+.specialty {
+  font-weight: 500;
+  color: #2e7d32;
+}
+
+.experience {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.available-slots {
+  color: #4caf50;
+  font-weight: 500;
+  margin-top: 1rem;
+}
+
+/* Expert detail */
+.expert-detail {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  background-color: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.expert-detail-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #e8f5e9;
+}
+
+.expert-detail-info {
+  flex: 1;
+}
+
+.expert-detail-info h2 {
+  margin-top: 0;
+}
+
+/* Date Picker Section */
+.date-picker-section {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 2rem 0;
+}
+
+.date-picker-section h3 {
+  color: darkgreen;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.date-picker-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+
+/* Custom DatePicker Styles */
+.react-datepicker {
+  font-family: inherit;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.react-datepicker__header {
+  background-color: darkgreen;
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+  padding: 1rem 0;
+}
+
+.react-datepicker__current-month {
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.react-datepicker__day-name {
+  color: white;
+  font-weight: 600;
+  width: 2.5rem;
+  line-height: 2.5rem;
+}
+
+.react-datepicker__day {
+  width: 2.5rem;
+  line-height: 2.5rem;
+  margin: 0.2rem;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.react-datepicker__day:hover {
+  background-color: #e8f5e9;
+  color: darkgreen;
+}
+
+.react-datepicker__day--selected {
+  background-color: darkgreen !important;
+  color: white !important;
+  font-weight: 600;
+}
+
+.react-datepicker__day--keyboard-selected {
+  background-color: rgba(0, 100, 0, 0.2);
+  color: darkgreen;
+}
+
+.react-datepicker__day--disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.react-datepicker__navigation {
+  top: 1rem;
+}
+
+.react-datepicker__navigation-icon::before {
+  border-color: white;
+}
+
+/* Date Confirmation Section */
+.date-confirmation,
+.change-date-section {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background: #f5f5f5;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.selected-date-display {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.selected-date-display strong {
+  color: darkgreen;
+}
+
+.confirm-date-btn,
+.change-date-btn {
+  background-color: darkgreen;
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.confirm-date-btn:hover,
+.change-date-btn:hover {
+  background-color: #004d00;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.change-date-btn {
+  background-color: #ff9800;
+}
+
+.change-date-btn:hover {
+  background-color: #e68900;
+}
+
+/* Improved Time Slots Grid */
+.time-slots-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.time-slot-btn {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border: 2px solid #e0e0e0;
+  padding: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.time-slot-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 100, 0, 0.15);
+  border-color: darkgreen;
+  background: linear-gradient(135deg, #e8f5e9 0%, #f1f8f4 100%);
+}
+
+.slot-time {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: darkgreen;
+}
+
+.slot-expert {
+  display: none; /* Hide expert name */
+}
+
+/* ...existing code... */
+
+.select-date-message {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: #f5f5f5;
+  border-radius: 12px;
+  margin: 2rem 0;
+}
+
+.select-date-message p {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.already-booked-message,
+.no-slots-message {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 2rem;
+  background: #fff3cd;
+  border: 2px solid #ffc107;
+  border-radius: 8px;
+  color: #856404;
+  font-weight: 500;
+}
+
+.no-slots-message {
+  background: #f8d7da;
+  border-color: #f5c6cb;
+  color: #721c24;
+}
+
+/* Bookings */
+.bookings-container {
+  animation: fadeIn 0.5s;
+  width: 100%;
+  max-width: 100%;
+}
+
+.booking-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.booking-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-left: 5px solid #4caf50;
+}
+
+.booking-info h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.booking-info p {
+  margin: 0.5rem 0;
+}
+
+.cancel-btn {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.cancel-btn:hover:not(:disabled) {
+  background: #c82333;
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
+}
+
+.cancel-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Dividers for better layout structure */
+.divider {
+  height: 1px;
+  background-color: #e0e0e0;
+  margin: 1rem 0 1.5rem;
+  width: 100%;
+}
+
+.divider-sm {
+  height: 1px;
+  background-color: #e8f5e9;
+  margin: 0.75rem auto 1.5rem;
+  width: 60px;
+}
+
+/* Content section with padding and styling */
+.content-section {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin-top: 1rem;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Update section header styles */
+.categories-container h2,
+.bookings-container h2 {
+  text-align: center;
+  position: relative;
+}
+
+/* Appointment precautions section - updated with numbers instead of icons */
+.appointment-precautions {
+  background-color: #f1f8e9;
+  border: 1px solid #dcedc8;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.appointment-precautions h3 {
+  color: #33691e;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.appointment-precautions ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: precaution-counter;
+}
+
+.appointment-precautions li {
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  counter-increment: precaution-counter;
+}
+
+.precaution-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  margin-right: 0.75rem;
+  background-color: #33691e;
+  color: white;
+  border-radius: 50%;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+/* Remove the old precaution icon style */
+.precaution-icon {
+  display: none;
+}
+
+/* Slots styling */
+.slots-container {
+  margin-bottom: 2rem;
+}
+
+.slots-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.slots-header h3 {
+  margin: 0;
+}
+
+.no-slots-message {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #666;
+  padding: 1.5rem;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+}
+
+/* Appointment booked confirmation */
+.appointment-booked {
+  background-color: #e8f5e9;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  animation: fadeIn 0.5s;
+}
+
+.appointment-booked h2 {
+  color: #2e7d32;
+  margin-top: 0;
+}
+
+.appointment-details {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.appointment-details p {
+  margin: 0.5rem 0;
+}
+
+.appointment-instructions {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.view-bookings-btn {
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.view-bookings-btn:hover {
+  background-color: #1b5e20;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Booking card updates */
+.appointment-note {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed #e0e0e0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Navigation buttons container */
+.navigation-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+/* Back button styling */
+.back-btn {
+  background-color: #e0f2f1;
+  color: #00695c;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+}
+
+.back-btn:before {
+  content: "←";
+  margin-right: 8px;
+  font-weight: bold;
+}
+
+.back-btn:hover {
+  background-color: #b2dfdb;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Loading message */
+.loading-message {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+  color: #2e7d32;
+  font-weight: 500;
+}
+
+/* Confirmation Dialog Overlay */
+.confirmation-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease;
+}
+
+.confirmation-dialog {
+  background-color: white;
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.3s ease;
+}
+
+.confirmation-dialog h3 {
+  color: #2e7d32;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.confirmation-content {
+  margin-bottom: 2rem;
+}
+
+.confirmation-question {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.booking-preview {
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 1.5rem;
+  border-left: 4px solid #2e7d32;
+}
+
+.booking-preview h4 {
+  color: #2e7d32;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.booking-preview p {
+  margin: 0.5rem 0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.booking-preview strong {
+  color: #333;
+  font-weight: 600;
+}
+
+.confirmation-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.confirm-yes-btn,
+.confirm-no-btn {
+  flex: 1;
+  padding: 0.9rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.confirm-yes-btn {
+  background-color: #2e7d32;
+  color: white;
+}
+
+.confirm-yes-btn:hover {
+  background-color: #1b5e20;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.confirm-no-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.confirm-no-btn:hover {
+  background-color: #d32f2f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Animation for dialog */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Booking Actions Container */
+.booking-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+/* Join Video Call Button */
+.join-call-btn {
+  background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(33, 150, 243, 0.4);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.join-call-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(33, 150, 243, 0.6);
+  background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%);
+}
+
+/* Pulse Animation for Join Button */
+.pulse-button {
+  animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+  }
+  50% {
+    box-shadow: 0 4px 25px rgba(76, 175, 80, 0.8);
+    transform: scale(1.02);
+  }
+  100% {
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+  }
+}
+
+/* Ready to Join Alert */
+.ready-to-join-alert {
+  background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+  color: white;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  animation: glow-animation 2s infinite;
+}
+
+@keyframes glow-animation {
+  0%,
+  100% {
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(76, 175, 80, 0.8);
+  }
+}
+
+/* Pulse Indicator */
+.pulse-indicator {
+  font-size: 1.2rem;
+  animation: pulse-dot 1.5s infinite;
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2);
+  }
+}
+
+/* Update existing cancel button to work with new layout */
+.cancel-btn {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.cancel-btn:hover:not(:disabled) {
+  background: #c82333;
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
+}
+
+.cancel-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .join-call-btn {
+    padding: 0.9rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .ready-to-join-alert {
+    font-size: 0.9rem;
+    padding: 0.7rem 0.8rem;
+  }
+
+  .booking-actions {
+    gap: 0.6rem;
+  }
+}
+
+/* User Expert Report Section */
+.user-expert-report {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%);
+  border-radius: 12px;
+  border-left: 5px solid #4caf50;
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.2);
+}
+
+.user-expert-report h4 {
+  color: #2e7d32;
+  margin: 0 0 1rem 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.report-content {
+  background: white;
+  padding: 1.2rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.report-content p {
+  margin: 0;
+  line-height: 1.8;
+  color: #333;
+  font-size: 1rem;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.report-date {
+  display: block;
+  color: #666;
+  font-size: 0.85rem;
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+/* Review Section */
+.review-section {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 2px dashed #e0e0e0;
+}
+
+.review-btn {
+  background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.review-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 152, 0, 0.4);
+}
+
+.submitted-review {
+  background: #fff8e1;
+  padding: 1.2rem;
+  border-radius: 8px;
+  border-left: 4px solid #ff9800;
+}
+
+.submitted-review h4 {
+  color: #f57c00;
+  margin: 0 0 1rem 0;
+}
+
+.rating-display {
+  margin: 0.8rem 0;
+  font-size: 1.5rem;
+}
+
+.star-filled {
+  color: #ffc107;
+}
+
+.star-empty {
+  color: #ddd;
+}
+
+.review-text {
+  margin: 1rem 0;
+  line-height: 1.6;
+  color: #333;
+}
+
+.submitted-review small {
+  color: #666;
+  font-size: 0.85rem;
+}
+
+/* Review Modal */
+.review-modal {
+  background: white;
+  border-radius: 16px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.review-modal .modal-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.review-modal .modal-header h3 {
+  color: #ff9800;
+  margin: 0;
+}
+
+.close-modal-btn {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #666;
+  cursor: pointer;
+  padding: 0;
+  width: 2rem;
+  height: 2rem;
+}
+
+.review-modal .modal-content {
+  padding: 1.5rem;
+}
+
+.consultation-info {
+  background: #f5f5f5;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.consultation-info p {
+  margin: 0.5rem 0;
+}
+
+.rating-section {
+  margin-bottom: 1.5rem;
+}
+
+.rating-section label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.star-rating {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 2.5rem;
+}
+
+.star-rating span {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.star-rating span:hover {
+  transform: scale(1.2);
+}
+
+.review-input {
+  margin-bottom: 1rem;
+}
+
+.review-input label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.review-input textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+.review-input textarea:focus {
+  outline: none;
+  border-color: #ff9800;
+}
+
+.review-modal .modal-footer {
+  display: flex;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.cancel-review-btn,
+.submit-review-btn {
+  flex: 1;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cancel-review-btn {
+  background: #f44336;
+  color: white;
+}
+
+.submit-review-btn {
+  background: #ff9800;
+  color: white;
+}
+
+.submit-review-btn:hover:not(:disabled) {
+  background: #f57c00;
+  transform: translateY(-2px);
+}
+
+.submit-review-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

@@ -1,0 +1,371 @@
+.plant-database-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  background-color: transparent; /* Changed from #f8faf8 to transparent */
+  border-radius: 10px;
+  box-shadow: none; /* Removed box shadow */
+}
+
+.plant-database-container h1 {
+  color: #2a6f2a;
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  font-weight: 700;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar {
+  display: flex;
+  max-width: 600px;
+  margin: 0 auto 30px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 15px 25px;
+  border: none;
+  font-size: 1rem;
+  outline: none;
+}
+
+.search-bar button {
+  padding: 0 25px;
+  background: linear-gradient(135deg, #2a6f2a, #388e3c);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.search-bar button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #388e3c, #2a6f2a);
+}
+
+.search-bar button:disabled {
+  background: #a5d6a7;
+  cursor: not-allowed;
+}
+
+.error-message {
+  background-color: #ffebee;
+  color: #b71c1c;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 500;
+  border-left: 4px solid #d32f2f;
+}
+
+.plant-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Center the search results */
+.results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  text-align: center;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.plant-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  transition: all 0.3s ease;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.plant-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(to bottom, #2a6f2a, #a5d6a7);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.plant-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.plant-card:hover::before {
+  opacity: 1;
+}
+
+.plant-card h3 {
+  color: #2a6f2a;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  border-bottom: 1px solid #e0f2e0;
+  padding-bottom: 10px;
+}
+
+.plant-card p {
+  margin: 8px 0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.plant-card p strong {
+  color: #333;
+  font-weight: 600;
+}
+
+.plant-details-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.plant-details-content {
+  background: white;
+  border-radius: 10px;
+  padding: 30px;
+  width: 100%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  animation: slideIn 0.3s ease-out forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.plant-details-content h2 {
+  color: #2a6f2a;
+  margin-top: 0;
+  font-size: 2rem;
+  border-bottom: 2px solid #e0f2e0;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.plant-details-content p {
+  margin: 15px 0;
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.plant-details-content strong {
+  color: #2a6f2a;
+  font-weight: 600;
+}
+
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #888;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.close-button:hover {
+  color: #2a6f2a;
+}
+
+.plant-image {
+  width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-top: 20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Add styles for initial state and welcome message */
+
+.welcome-message h3 {
+  color: #2a6f2a;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.welcome-message p {
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.welcome-message .popular-searches {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.welcome-message .search-pill {
+  background: white;
+  border: 1px solid #a5d6a7;
+  border-radius: 20px;
+  padding: 8px 15px;
+  font-size: 0.9rem;
+  color: #2a6f2a;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-block;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.welcome-message .search-pill:hover {
+  background: #e8f5e9;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* No results message - only show after a search is performed */
+.no-results {
+  text-align: center;
+  padding: 40px 20px;
+  color: #666;
+}
+
+.no-results.initial-state {
+  display: none; /* Hide the no results message in initial state */
+}
+
+/* Back button styling */
+.back-button {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 8px 15px;
+  font-size: 0.9rem;
+  color: #2a6f2a;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  margin-top: 15px;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.back-button:hover {
+  background: #e8f5e9;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Results header with title and back button */
+.results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  text-align: center;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.results-header h3 {
+  color: #2a6f2a;
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+/* Center the back button in no-results view */
+.no-results .back-button {
+  display: block;
+  margin: 20px auto 0;
+}
+
+/* For single card alignment when there's only one result */
+@media (min-width: 768px) {
+  .plant-list:only-child {
+    justify-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .plant-database-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .search-bar {
+    flex-direction: column;
+    border-radius: 10px;
+    overflow: visible;
+    box-shadow: none;
+  }
+
+  .search-bar input {
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .search-bar button {
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .plant-list {
+    grid-template-columns: 1fr;
+  }
+
+  .plant-details-content {
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .plant-details-content h2 {
+    font-size: 1.6rem;
+  }
+}

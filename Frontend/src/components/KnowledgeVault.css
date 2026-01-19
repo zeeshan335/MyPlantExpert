@@ -1,0 +1,849 @@
+.knowledge-vault-container {
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+.knowledge-vault-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.knowledge-vault-header h1 {
+  color: #0f2d1a;
+  font-size: 2.5rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+}
+
+.knowledge-vault-header p {
+  color: #666;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.back-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #0f2d1a;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background: #1a4d2e;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(15, 45, 26, 0.3);
+}
+
+.knowledge-content {
+  padding: 2rem 0;
+}
+
+.intro-section {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.intro-section h2 {
+  color: #0f2d1a;
+  font-size: 2rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.intro-section p {
+  color: #666;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.category-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 3px solid transparent;
+}
+
+.category-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.category-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.category-card h3 {
+  color: #0f2d1a;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+}
+
+.category-card p {
+  color: #666;
+  margin: 0 0 1rem 0;
+  font-size: 0.95rem;
+}
+
+.card-preview {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.mini-card {
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+}
+
+/* Learning Cards */
+.learning-cards-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.cards-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.back-to-categories-btn {
+  background: #0f2d1a;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.back-to-categories-btn:hover {
+  background: #1a4d2e;
+  transform: translateX(-5px);
+}
+
+.progress-indicator {
+  flex: 1;
+  max-width: 400px;
+}
+
+.progress-text {
+  display: block;
+  color: #666;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-align: right;
+}
+
+.progress-bar {
+  height: 8px;
+  background: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  transition: width 0.3s ease;
+  border-radius: 4px;
+}
+
+.card-display {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.learning-card {
+  background: white;
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 700px;
+  border: 4px solid;
+  transition: all 0.3s ease;
+}
+
+.card-icon {
+  font-size: 5rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.card-title {
+  color: #0f2d1a;
+  font-size: 2rem;
+  margin: 0 0 1.5rem 0;
+  text-align: center;
+  font-weight: 700;
+}
+
+.card-tip {
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+}
+
+.tip-label {
+  display: block;
+  font-weight: 700;
+  color: #0f2d1a;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.card-tip p {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  line-height: 1.6;
+}
+
+.card-details {
+  margin-bottom: 1.5rem;
+}
+
+.card-details p {
+  margin: 0;
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: center;
+}
+
+.card-category {
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.card-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+.nav-btn {
+  background: #0f2d1a;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.nav-btn:hover:not(:disabled) {
+  background: #1a4d2e;
+  transform: scale(1.05);
+}
+
+.nav-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.dots-indicator {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot:hover {
+  transform: scale(1.3);
+}
+
+.card-grid-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.mini-preview-card {
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid;
+}
+
+.mini-preview-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.mini-preview-card.active {
+  border-width: 3px;
+}
+
+.mini-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.mini-preview-card p {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Learning Paths Section */
+.learning-paths {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.learning-path-card {
+  background: white;
+  padding: 3rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 3px solid transparent;
+}
+
+.learning-path-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  border-color: #0f2d1a;
+}
+
+.learning-path-card.active-path {
+  transform: scale(1.02);
+  box-shadow: 0 8px 24px rgba(15, 45, 26, 0.2);
+}
+
+.learning-path-card.active-path h3 {
+  color: #0f2d1a;
+}
+
+.learning-path-card.active-path .path-count {
+  background: #0f2d1a;
+  color: white;
+}
+
+.path-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.learning-path-card h3 {
+  color: #0f2d1a;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.8rem;
+}
+
+.learning-path-card p {
+  color: #666;
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+}
+
+.path-count {
+  display: inline-block;
+  background: #e8f5e9;
+  color: #0f2d1a;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* Guides Section */
+.guides-section {
+  padding: 2rem 0;
+}
+
+.guides-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.guides-header h2 {
+  color: #0f2d1a;
+  font-size: 2rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.guides-header p {
+  color: #666;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.guides-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.guide-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 3px solid transparent;
+}
+
+.guide-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.guide-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.guide-icon {
+  font-size: 3rem;
+}
+
+.guide-badges {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.difficulty-badge {
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.guide-card h3 {
+  color: #0f2d1a;
+  margin: 0 0 1rem 0;
+  font-size: 1.3rem;
+  line-height: 1.4;
+}
+
+.guide-meta {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.guide-category {
+  color: #999;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+/* Guide Detail */
+.guide-detail {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.guide-detail-header {
+  margin-bottom: 3rem;
+}
+
+.back-to-guides-btn {
+  background: #0f2d1a;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-bottom: 2rem;
+}
+
+.back-to-guides-btn:hover {
+  background: #1a4d2e;
+  transform: translateX(-5px);
+}
+
+.guide-title-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.guide-icon-large {
+  font-size: 5rem;
+}
+
+.guide-title-section h1 {
+  color: #0f2d1a;
+  margin: 0 0 1rem 0;
+  font-size: 2rem;
+}
+
+.guide-info-row {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.info-badge {
+  padding: 0.4rem 0.9rem;
+  border-radius: 12px;
+  background: #f5f5f5;
+  color: #333;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Steps Container */
+.steps-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.step-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  border-left: 6px solid;
+  display: flex;
+  gap: 2rem;
+  transition: all 0.3s ease;
+}
+
+.step-card:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transform: translateX(5px);
+}
+
+.step-number {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-content h3 {
+  color: #0f2d1a;
+  margin: 0 0 1rem 0;
+  font-size: 1.4rem;
+}
+
+.step-description {
+  color: #666;
+  margin: 0 0 1rem 0;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.step-tip {
+  background: #fff8e1;
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-start;
+  border-left: 4px solid #ffc107;
+}
+
+.tip-icon {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.tip-text {
+  color: #795548;
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* Guide Completion */
+.guide-completion {
+  display: flex;
+  justify-content: center;
+}
+
+.completion-card {
+  background: white;
+  padding: 3rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border: 3px solid;
+  max-width: 500px;
+}
+
+.completion-card h3 {
+  color: #0f2d1a;
+  margin: 0 0 1rem 0;
+  font-size: 2rem;
+}
+
+.completion-card p {
+  color: #666;
+  margin: 0 0 2rem 0;
+  font-size: 1.1rem;
+}
+
+.completion-card button {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+}
+
+/* Enhanced Guide Cards */
+.guide-description {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 0.5rem 0 1rem 0;
+  line-height: 1.5;
+}
+
+/* Guide Detail Enhancements */
+.guide-subtitle {
+  color: #666;
+  font-size: 1rem;
+  margin: 0.5rem 0 1rem 0;
+}
+
+/* Materials Section */
+.materials-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.materials-section h3 {
+  color: #0f2d1a;
+  margin: 0 0 1.5rem 0;
+  font-size: 1.4rem;
+}
+
+.materials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.material-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.8rem;
+  background: #f9f9f9;
+  border-radius: 8px;
+  border-left: 4px solid #4caf50;
+}
+
+.material-icon {
+  color: #4caf50;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Step Warning */
+.step-warning {
+  background: #fff3e0;
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-start;
+  border-left: 4px solid #ff9800;
+  margin-top: 1rem;
+}
+
+.warning-icon {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.warning-text {
+  color: #e65100;
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* Common Mistakes Section */
+.mistakes-section,
+.success-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.mistakes-section h3,
+.success-section h3 {
+  color: #0f2d1a;
+  margin: 0 0 1rem 0;
+  font-size: 1.3rem;
+}
+
+.mistakes-list,
+.success-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mistakes-list li,
+.success-list li {
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.8rem;
+  background: #ffebee;
+  border-left: 4px solid #f44336;
+  border-radius: 8px;
+  color: #c62828;
+  font-weight: 500;
+}
+
+.success-list li {
+  background: #e8f5e9;
+  border-left-color: #4caf50;
+  color: #2e7d32;
+}
+
+@media (max-width: 768px) {
+  .knowledge-vault-container {
+    padding: 1rem;
+  }
+
+  .knowledge-vault-header h1 {
+    font-size: 2rem;
+  }
+
+  .categories-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .back-btn {
+    position: static;
+    margin-top: 1rem;
+    width: 100%;
+  }
+
+  .learning-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+  }
+
+  .card-navigation {
+    flex-wrap: wrap;
+  }
+
+  .card-grid-preview {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cards-header {
+    flex-direction: column;
+  }
+
+  .progress-indicator {
+    max-width: 100%;
+  }
+
+  .progress-text {
+    text-align: center;
+  }
+
+  .learning-paths {
+    grid-template-columns: 1fr;
+  }
+
+  .guides-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .guide-title-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .step-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .step-number {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,799 @@
+/* Community Page Styles */
+.community-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.community-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.community-title {
+  color: #2e7d32;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.post-button {
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  border-radius: 28px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.post-button:hover {
+  background-color: #1b5e20;
+}
+
+.welcome-card {
+  background: linear-gradient(145deg, #f8fdf8 0%, #edf7ed 100%);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-card h2 {
+  color: #2e7d32;
+  margin-top: 0;
+}
+
+/* Topic Tabs */
+.topics-tabs {
+  display: flex;
+  overflow-x: auto;
+  background-color: #f1f8e9;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.topic-tab {
+  padding: 12px 20px;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  white-space: nowrap;
+  font-weight: 500;
+  outline: none; /* Remove outline */
+}
+
+.topic-tab:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.topic-tab.active {
+  color: #2e7d32;
+  position: relative;
+}
+
+.topic-tab.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: #2e7d32;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-header {
+  background-color: #f1f8e9;
+  padding: 15px 20px; /* Remove left padding that was added for left-positioned button */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px 8px 0 0;
+  position: relative;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-weight: 600;
+  color: #2e7d32;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #555;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+  position: absolute;
+  top: 10px;
+  right: 10px; /* Changed from left to right */
+  padding: 0;
+  font-weight: bold;
+}
+
+.close-button::before {
+  content: none; /* Remove the duplicate cross */
+}
+
+.close-button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.modal-footer {
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #eee;
+}
+
+/* Form Controls */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+select.form-control {
+  height: 40px;
+}
+
+textarea.form-control {
+  resize: vertical;
+}
+
+/* Buttons */
+.button {
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.primary {
+  background-color: #2e7d32;
+  color: white;
+}
+
+.primary:hover:not(:disabled) {
+  background-color: #1b5e20;
+}
+
+.secondary {
+  background-color: white;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.secondary:hover {
+  background-color: #f5f5f5;
+}
+
+.danger {
+  background-color: #f44336;
+  color: white;
+}
+
+.danger:hover:not(:disabled) {
+  background-color: #d32f2f;
+}
+
+.small {
+  font-size: 0.8rem;
+  padding: 4px 8px;
+}
+
+/* Admin Controls */
+.admin-controls {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+/* Loading */
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.loading-spinner {
+  border: 5px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading p {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #777;
+  transition: opacity 0.3s ease; /* Add transition */
+}
+
+/* Error Message */
+.error-message {
+  background-color: #ffebee;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.error-message p {
+  color: #c62828;
+  margin-top: 0;
+}
+
+/* Notice Card */
+.notice-card {
+  background-color: #fff8e1;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.notice-card h3 {
+  color: #ff8f00;
+  margin-top: 0;
+}
+
+/* Success notice card */
+.notice-card.success {
+  background-color: #e8f5e9;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+  border-left: 4px solid #4caf50;
+}
+
+.notice-card.success h3 {
+  color: #2e7d32;
+  margin-top: 0;
+}
+
+.notice-card.success p {
+  color: #1b5e20;
+}
+
+/* Empty State */
+.empty-state {
+  background-color: #f9fbe7;
+  padding: 30px;
+  text-align: center;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.empty-state h3 {
+  color: #558b2f;
+  margin-top: 0;
+}
+
+/* Post Card - Facebook-inspired Design */
+.posts-container {
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.post-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px;
+  padding: 0;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+  border: 1px solid #dddfe2;
+  width: 100%;
+}
+
+.post-card:hover {
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Post Header Updates */
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 12px 16px 8px;
+  border-bottom: none;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.post-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.author-name {
+  font-weight: 600;
+  color: #050505;
+  font-size: 0.9rem;
+  margin-bottom: 2px;
+}
+
+.timestamp {
+  font-size: 0.75rem;
+  color: #65676b;
+  text-align: left;
+  margin-bottom: 4px;
+}
+
+.inline-topic-tag {
+  background-color: #e7f3ff;
+  color: #1877f2;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: 12px;
+  display: inline-block;
+  margin-top: 4px;
+}
+
+.post-header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.expert-badge {
+  background-color: #ffd700;
+  color: #333;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.repost-badge {
+  background-color: #f0f2f5;
+  color: #65676b;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Post Content */
+.post-content {
+  padding: 4px 16px 16px;
+  margin-top: 0;
+  line-height: 1.5;
+  color: #050505;
+  font-size: 0.9rem;
+  white-space: pre-wrap;
+  border-bottom: 1px solid #ced0d4;
+  margin-bottom: 0;
+  text-align: left; /* Ensure left alignment */
+}
+
+.post-actions {
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 0;
+  border: none;
+  background-color: #fff;
+  margin: 0;
+}
+
+.action-button {
+  flex: 1;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 0;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Keep this centered */
+  font-size: 0.85rem;
+  color: #65676b;
+  transition: background-color 0.2s;
+  font-weight: 500;
+}
+
+.action-button:hover {
+  background-color: #f2f2f2;
+}
+
+.action-button.liked {
+  color: #1877f2;
+}
+
+.action-button.disliked {
+  color: #e41e3f;
+}
+
+/* Action button count styling */
+.action-count {
+  display: inline-block;
+  margin-left: 4px;
+  font-weight: 500;
+}
+
+.liked .action-count {
+  color: #1877f2;
+}
+
+.disliked .action-count {
+  color: #e41e3f;
+}
+
+/* Update the icon styles */
+.fas {
+  margin-right: 6px;
+  font-size: 16px;
+  position: relative;
+  top: 0; /* Adjust vertical alignment if needed */
+}
+
+.liked .fas {
+  color: #1877f2;
+}
+
+.disliked .fas {
+  color: #e41e3f;
+}
+
+/* Comments section - text alignment fix */
+.comments-section {
+  background-color: #f0f2f5;
+  padding: 12px 16px;
+  border-top: 1px solid #ced0d4;
+  text-align: left; /* Ensure left alignment */
+  max-width: 90%; /* Reduce width from 100% */
+  margin: 0 auto; /* Center the container */
+}
+
+.comments-title {
+  margin: 0 0 10px;
+  color: #050505;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.no-comments {
+  color: #65676b;
+  font-style: normal;
+  font-size: 0.85rem;
+  margin: 6px 0;
+  text-align: center; /* This can stay centered as it's an empty state message */
+}
+
+.comment {
+  background-color: #fff;
+  border: none;
+  border-radius: 18px;
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  box-shadow: none;
+  text-align: left; /* Ensure left alignment */
+  width: auto; /* Allow natural sizing instead of full width */
+  max-width: 100%; /* Prevent overflow */
+}
+
+.comment-content {
+  color: #050505;
+  font-size: 0.85rem;
+  text-align: left; /* Explicitly set text alignment */
+}
+
+.comment-actions {
+  margin-top: 4px;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 0; /* Remove the alignment padding */
+  gap: 0; /* Remove the gap */
+}
+
+.reply-button {
+  background: transparent;
+  border: none;
+  color: #1877f2;
+  font-size: 0.75rem;
+  padding: 2px 5px;
+  cursor: pointer;
+  margin-left: 4px;
+  font-weight: normal;
+}
+
+.reply-button:hover {
+  text-decoration: underline;
+}
+
+.comment-reply-form {
+  margin: 8px 0 8px 16px;
+  display: flex;
+}
+
+.comment.reply {
+  margin-left: 24px;
+  margin-top: 8px;
+  background-color: #f7f9fa;
+  border-left: 3px solid #dddfe2;
+  max-width: none;
+}
+
+.add-comment {
+  display: flex;
+  margin-top: 10px;
+  padding-left: 0;
+  position: static;
+}
+
+/* Remove avatar placeholder for main comment form */
+.add-comment::before {
+  content: none;
+}
+
+.comment-input,
+.reply-input {
+  flex-grow: 1;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  background-color: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  height: auto;
+}
+
+.comment-button {
+  background-color: transparent;
+  color: #1877f2;
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 0 12px;
+  border: none;
+  margin-left: 8px;
+  opacity: 1;
+}
+
+/* Remove Facebook-specific elements */
+.comment-with-reactions,
+.reaction-indicator,
+.comment-timestamp {
+  display: none;
+}
+
+/* Floating button */
+.floating-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #2e7d32;
+  color: white;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.floating-button:hover {
+  background-color: #1b5e20;
+}
+
+/* Header buttons container */
+.header-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.secondary-button {
+  background-color: white;
+  color: #2e7d32;
+  border: 1px solid #2e7d32;
+  border-radius: 28px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.secondary-button:hover {
+  background-color: #f1f8e9;
+}
+
+/* User posts in modal */
+.user-posts-list {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.user-post-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border-bottom: 1px solid #e0e0e0;
+  transition: background-color 0.2s;
+}
+
+.user-post-item:hover {
+  background-color: #f9f9f9;
+}
+
+.user-post-content {
+  flex: 1;
+  padding-right: 10px;
+}
+
+.user-post-topic {
+  display: inline-block;
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  margin-bottom: 5px;
+}
+
+.user-post-text {
+  margin: 5px 0;
+  color: #212121;
+  font-size: 0.9rem;
+}
+
+.user-post-time {
+  display: block;
+  color: #757575;
+  font-size: 0.75rem;
+}
+
+.user-post-actions {
+  display: flex;
+  gap: 5px;
+}
+
+.empty-state.small {
+  background-color: #f9fbe7;
+  padding: 15px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+/* Move comment like icon to right top */
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Changed from center to flex-start */
+  margin-bottom: 3px;
+}
+
+.comment-author {
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: #050505;
+}
+
+.comment-likes {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Push to right side */
+  position: relative;
+  top: -2px; /* Move slightly up */
+}
+
+.like-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #65676b;
+  padding: 2px; /* Add some padding for better click target */
+}
+
+/* Remove focus outline on buttons and icons */
+.action-button,
+.like-button,
+.reply-button,
+.comment-button {
+  outline: none;
+}
+
+.action-button:focus,
+.like-button:focus,
+.reply-button:focus,
+.comment-button:focus {
+  outline: none;
+}
+
+/* Optional: add a subtle focus style for accessibility that doesn't use outlines */
+.action-button:focus-visible,
+.like-button:focus-visible,
+.reply-button:focus-visible,
+.comment-button:focus-visible {
+  box-shadow: 0 0 0 2px rgba(46, 125, 50, 0.2);
+  border-radius: 4px;
+}

@@ -1,0 +1,319 @@
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Full height for better centering */
+  padding: 1rem; /* Reduced padding */
+  margin-top: 0; /* Remove top margin */
+  margin-bottom: 0; /* Remove bottom margin */
+  background-color: #f5f5f5; /* Light gray background */
+}
+
+.register-card {
+  background-color: white;
+  border-radius: 10px; /* Smaller radius */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+  padding: 1.5rem; /* Reduced padding */
+  width: 100%;
+  max-width: 500px; /* More compact width */
+}
+
+.register-card h1 {
+  color: #1a4d2e;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+/* Smaller subtitle */
+.register-subtitle {
+  text-align: center;
+  color: #1a4d2e;
+  margin-bottom: 1.2rem; /* Reduced margin */
+  font-size: 1rem; /* Smaller font */
+  font-weight: 500;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem; /* Reduced gap */
+  margin-top: 0.2rem;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 10px; /* Further reduced spacing */
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.6rem 0.75rem; /* Reduced padding */
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.9rem; /* Reduced font size */
+}
+
+.form-group input::placeholder {
+  color: #999; /* More visible placeholder text */
+}
+
+.form-group input:focus {
+  border-color: #1a4d2e;
+  outline: none;
+}
+
+.form-group input.error {
+  border-color: #e74c3c;
+}
+
+/* Position error messages below the input field */
+.error-message {
+  position: absolute;
+  font-size: 0.7rem; /* Reduced font size */
+  color: #e74c3c;
+  left: 0;
+  bottom: -16px; /* Adjust error message position */
+}
+
+/* Special handling for password fields */
+.password-field {
+  position: relative;
+  margin-bottom: 18px; /* Slightly more space for password fields */
+}
+
+/* Remove the bottom positioning that's causing overlap */
+.password-field .error-message {
+  bottom: -16px; /* Adjust password error message position */
+  font-size: 0.75rem;
+  width: 100%;
+  line-height: 1.2;
+}
+
+/* Password toggle icon alignment */
+.password-toggle {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-60%); /* Adjusted vertical alignment */
+  cursor: pointer;
+  color: #555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: none; /* Remove background */
+  border: none; /* Remove border */
+  outline: none; /* Remove outline */
+}
+
+.password-toggle i {
+  font-size: 16px;
+}
+
+/* Removed the separate icon styles as they are now part of the toggle */
+.password-toggle i {
+  display: none; /* Hide the icon, text will be used instead */
+}
+
+/* Remove any container specific styling */
+.password-container {
+  position: relative;
+  width: 100%;
+}
+
+/* Adjust padding for password fields to accommodate the icon */
+input[type="password"],
+input[type="text"] {
+  padding-right: 36px; /* Provide space for the eye icon */
+}
+
+/* Ensure error messages don't affect icon positioning */
+.error-message {
+  position: absolute;
+  left: 0;
+  top: 100%; /* Position below the input instead of using bottom */
+  margin-top: 5px; /* Add space between input and error */
+  color: #e74c3c;
+  font-size: 0.75rem;
+  background-color: transparent; /* Remove background color */
+}
+
+.password-field .error-message {
+  bottom: -16px; /* Adjust password error message position */
+}
+
+.register-btn {
+  margin-top: 10px; /* Adjusted margin */
+  padding: 0.5rem 1rem; /* Reduced padding */
+  font-size: 0.9rem; /* Smaller font */
+}
+
+/* Restore original login prompt styles */
+.login-prompt {
+  margin-top: 1rem; /* Reduced margin */
+  text-align: center;
+  color: #555;
+  font-size: 0.9rem; /* Reduced font size */
+}
+
+.login-prompt a {
+  color: #1a4d2e; /* Restore original color */
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.login-prompt a:hover {
+  color: #143d25;
+  text-decoration: underline;
+}
+
+/* Google Sign Up Button */
+.google-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  background-color: white;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  margin-bottom: 1rem;
+}
+
+.google-btn:hover {
+  background-color: #f5f5f5;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.google-icon-wrapper {
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.google-icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Separator between Google button and form */
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 0.8rem; /* Reduced margin */
+  color: #777;
+}
+
+.separator::before,
+.separator::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #ddd;
+}
+
+.separator span {
+  padding: 0 8px; /* Reduced padding */
+  font-size: 0.85rem; /* Smaller font */
+}
+
+/* Alert styles */
+.error-alert {
+  color: #e74c3c;
+  border: none;
+  background-color: transparent;
+  padding: 0.7rem;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.success-alert {
+  background-color: #e8f5e9;
+  border: 1px solid #81c784;
+  border-radius: 4px;
+  padding: 15px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.success-alert h4 {
+  color: #2e7d32;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.success-alert p {
+  color: #388e3c;
+  margin-bottom: 10px;
+}
+
+.expire-warning {
+  color: #d32f2f !important;
+  font-weight: 500;
+}
+
+.verify-btn {
+  background-color: #388e3c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-top: 5px;
+  transition: background-color 0.2s;
+}
+
+.verify-btn:hover {
+  background-color: #2e7d32;
+}
+
+/* Button disabled state */
+.google-btn:disabled,
+.register-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Forgot password link */
+.forgot-password {
+  text-align: center;
+  margin-top: 0.8rem;
+  font-size: 0.8rem;
+}
+
+.forgot-password a {
+  color: #777;
+  text-decoration: none;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+  color: #1a4d2e;
+}
+
+@media (max-width: 600px) {
+  .register-card {
+    padding: 1.15rem; /* Slightly reduced padding */
+  }
+
+  .register-btn {
+    padding: 0.65rem; /* Slightly reduced padding */
+  }
+}
+
+/* Specific styling for password match error */
+.password-field:last-of-type .error-message {
+  bottom: -20px;
+}

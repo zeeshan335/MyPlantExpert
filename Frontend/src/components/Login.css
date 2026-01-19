@@ -1,0 +1,216 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box; /* Ensure padding doesn't affect width */
+  background-color: #f5f5f5; /* Light gray background - same as Register */
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+.login-card h1 {
+  color: #1a4d2e;
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.login-subtitle {
+  text-align: center;
+  color: #777;
+  margin-bottom: 1.2rem;
+  font-size: 0.95rem;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+/* Google Button - same as Register */
+.google-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  background-color: white;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  margin-bottom: 1rem;
+}
+
+.google-btn:hover {
+  background-color: #f5f5f5;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.google-icon-wrapper {
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.google-icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Separator - same as Register */
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 0.8rem;
+  color: #777;
+}
+
+.separator::before,
+.separator::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #ddd;
+}
+
+.separator span {
+  padding: 0 8px;
+  font-size: 0.85rem;
+}
+
+/* Adjust spacing for password and forgot password */
+.forgot-password-link {
+  text-align: right;
+  margin-top: 0.2rem; /* Reduced space */
+  margin-bottom: 0.4rem; /* Reduced space between link and button */
+  font-size: 0.85rem;
+}
+
+.forgot-password-link a {
+  color: #1a4d2e;
+  text-decoration: none;
+}
+
+.forgot-password-link a:hover {
+  text-decoration: underline;
+}
+
+/* Form styles - similar to Register */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.2rem;
+  position: relative;
+  margin-bottom: 35px;
+  padding-top: 20px; /* Add space for error message above */
+}
+
+.form-group input {
+  padding: 0.7rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+  border-color: #1a4d2e;
+  outline: none;
+}
+
+.form-group input.error {
+  border-color: #e74c3c;
+}
+
+/* Update error-alert to remove background */
+.error-alert {
+  color: #e74c3c;
+  border: none;
+  background-color: transparent;
+  padding: 0.7rem;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+/* Update error-message styling */
+.error-message {
+  color: #e74c3c;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -20px;
+  background-color: transparent;
+  border-left: none; /* Remove red line */
+}
+
+/* Password field */
+.password-field {
+  position: relative;
+  margin-bottom: 40px;
+  padding-top: 20px; /* Add space for error message */
+}
+
+.password-toggle {
+  position: absolute;
+  right: 12px;
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Ensure perfect centering */
+  cursor: pointer;
+  color: #777;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  width: 24px;
+  height: 24px;
+}
+
+.password-field input {
+  padding-right: 40px;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 0.4rem;
+  font-size: 0.95rem;
+}
+
+.register-prompt {
+  text-align: center;
+  margin-top: 1.2rem;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.register-prompt a {
+  color: #1a4d2e;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.register-prompt a:hover {
+  text-decoration: underline;
+}

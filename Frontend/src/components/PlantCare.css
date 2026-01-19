@@ -1,0 +1,599 @@
+.plant-care-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.header h2 {
+  color: #2a6041;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.header p {
+  color: #5a5a5a;
+  font-size: 18px;
+}
+
+/* Question styling */
+.question-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background-color: #e9ecef;
+  border-radius: 4px;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background-color: #4caf50;
+  transition: width 0.3s ease;
+}
+
+.question-text {
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.options-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.option-button {
+  padding: 15px 20px;
+  font-size: 18px;
+  background-color: #f8f9fa;
+  color: #333;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.option-button:hover {
+  background-color: #e8f5e9;
+  border-color: #4caf50;
+}
+
+.back-button {
+  margin-top: 25px;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #666;
+  background-color: transparent;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.back-button:hover {
+  background-color: #f8f9fa;
+}
+
+/* Results styling */
+.results-container {
+  padding: 20px;
+}
+
+.section-title {
+  font-size: 28px;
+  color: #2a6041;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.recommendation-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.plant-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.plant-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.plant-name {
+  font-size: 22px;
+  color: #2a6041;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 10px;
+}
+
+.plant-details p {
+  margin: 8px 0;
+  font-size: 16px;
+  color: #555;
+}
+
+.plant-details span {
+  font-weight: 600;
+  color: #333;
+}
+
+.no-results {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.no-results .icon {
+  font-size: 50px;
+  margin-bottom: 15px;
+}
+
+.no-results p {
+  font-size: 18px;
+  color: #666;
+  margin: 5px 0;
+}
+
+.primary-button {
+  display: block;
+  margin: 30px auto 0;
+  padding: 12px 30px;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.primary-button:hover {
+  background-color: #388e3c;
+}
+
+/* Favorites styling */
+.favorites-container {
+  padding: 20px;
+}
+
+.favorite-card {
+  border-left: 4px solid #e91e63;
+}
+
+/* Planted Plants styling */
+.planted-container {
+  padding: 20px;
+}
+
+.planted-card {
+  border-left: 4px solid #4caf50;
+  position: relative;
+}
+
+.care-calendar {
+  background-color: #f1f8e9;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+.care-calendar h4 {
+  color: #2a6041;
+  margin-bottom: 10px;
+  border-bottom: 1px dashed #4caf50;
+  padding-bottom: 5px;
+}
+
+.care-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px dotted #e0e0e0;
+}
+
+.care-action {
+  font-weight: 600;
+}
+
+.reminder-date {
+  color: #666;
+  font-size: 14px;
+}
+
+.select-plant-button {
+  background-color: #f1f8e9;
+  color: #2a6041;
+  border: 1px solid #2a6041;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.select-plant-button:hover {
+  background-color: #2a6041;
+  color: white;
+}
+
+.tab-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.tab-button {
+  padding: 10px 20px;
+  background-color: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.tab-button.active {
+  background-color: #4caf50;
+  color: white;
+  border-color: #4caf50;
+}
+
+.care-complete {
+  margin-left: 10px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #4caf50;
+  font-size: 18px;
+}
+
+.completed-task {
+  text-decoration: line-through;
+  color: #888;
+}
+
+/* Animation for favorite button */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.add-favorite-button:active {
+  animation: pulse 0.3s ease-in-out;
+}
+
+.garden-count-button {
+  background-color: transparent;
+  border: none;
+  color: #4caf50;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  padding: 5px 15px;
+  border-radius: 20px;
+  transition: all 0.2s ease;
+}
+
+.garden-count-button:hover {
+  background-color: #e8f5e9;
+}
+
+.view-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 15px;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  animation: subtle-bounce 1s ease-in-out;
+}
+
+.view-icon {
+  font-size: 18px;
+}
+
+@keyframes subtle-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+.add-favorite-button,
+.remove-favorite-button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.add-favorite-button {
+  background-color: #e8f5e9;
+  color: #2a6041;
+  border: 1px solid #2a6041;
+}
+
+.add-favorite-button:hover {
+  background-color: #2a6041;
+  color: white;
+}
+
+.remove-favorite-button {
+  background-color: #ffebee;
+  color: #e91e63;
+  border: 1px solid #e91e63;
+}
+
+.remove-favorite-button:hover {
+  background-color: #e91e63;
+  color: white;
+}
+
+.remove-garden-button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  background-color: #fff3e0;
+  color: #ff9800;
+  border: 1px solid #ff9800;
+  transition: all 0.2s ease;
+}
+
+.remove-garden-button:hover {
+  background-color: #ff9800;
+  color: white;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.add-favorite-button:active,
+.remove-favorite-button:active,
+.remove-garden-button:active,
+.select-plant-button:active {
+  animation: pulse 0.3s ease-in-out;
+}
+
+/* Start screen styling */
+.start-screen {
+  padding: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.welcome-section {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 30px;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.welcome-section h3 {
+  font-size: 24px;
+  color: #2a6041;
+  margin-bottom: 15px;
+}
+
+.welcome-section p {
+  color: #666;
+  margin-bottom: 25px;
+  font-size: 18px;
+}
+
+.start-quiz-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 15px 35px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.start-quiz-button:hover {
+  background-color: #388e3c;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.overview-sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.overview-section {
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.favorite-overview {
+  background-color: #fff0f3;
+  border-left: 4px solid #e91e63;
+}
+
+.garden-overview {
+  background-color: #f1f8e9;
+  border-left: 4px solid #4caf50;
+}
+
+.overview-section h4 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.favorite-overview h4::before {
+  content: "❤️";
+  margin-right: 8px;
+}
+
+.garden-overview h4::before {
+  content: "🌱";
+  margin-right: 8px;
+}
+
+.mini-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.mini-card {
+  background-color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 14px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.more-card {
+  background-color: #eee;
+  color: #666;
+}
+
+.view-all-button {
+  background: none;
+  border: 1px solid currentColor;
+  padding: 8px 15px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.favorite-overview .view-all-button {
+  color: #e91e63;
+}
+
+.favorite-overview .view-all-button:hover {
+  background-color: #ffebee;
+}
+
+.garden-overview .view-all-button {
+  color: #4caf50;
+}
+
+.garden-overview .view-all-button:hover {
+  background-color: #e8f5e9;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 30px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.empty-state p {
+  margin: 10px 0;
+  color: #666;
+}
+
+.plant-care-content {
+  padding: 20px;
+  max-width: 100%;
+}
+
+/* Ensure responsive behavior with sidebar */
+@media (max-width: 768px) {
+  .plant-care-content {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .question-text {
+    font-size: 20px;
+  }
+
+  .option-button {
+    padding: 12px 15px;
+    font-size: 16px;
+  }
+
+  .recommendation-results {
+    grid-template-columns: 1fr;
+  }
+}

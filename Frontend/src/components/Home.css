@@ -1,0 +1,523 @@
+/* Reset any margin and padding for the body and html elements */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: auto;
+}
+
+.home-container {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Change to hidden to prevent scrollbars */
+}
+
+/* Fix hero section to fill entire space */
+.hero-section {
+  position: relative;
+  flex: 1;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("/images/plant-background.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+/* Remove margins from navbar and footer */
+.navbar {
+  margin-bottom: 0;
+}
+
+.footer {
+  margin-top: 0;
+}
+
+/* Remove dividers that might cause extra space */
+.page-divider {
+  display: none; /* Hide dividers completely */
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  flex: 1; /* Take all available space */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("/images/plant-background.jpg"); /* You'll need to add this image to your public folder */
+  background-size: cover;
+  background-position: center;
+  color: white;
+  margin: 0;
+  padding: 0; /* Remove padding completely */
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    15,
+    45,
+    26,
+    0.7
+  ); /* Semi-transparent overlay using #0f2d1a */
+}
+
+.hero-content {
+  position: relative; /* This ensures content stays above the overlay */
+  width: 90%;
+  max-width: 1000px;
+  text-align: center;
+  z-index: 10;
+}
+
+.hero-content h1 {
+  font-size: 3.8rem;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.hero-content h1 .line-break {
+  display: block;
+  margin-top: 0.2em;
+  font-size: 0.9em;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Get Started Button */
+.get-started-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.get-started-btn {
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+  display: inline-block;
+  background-color: #1a4d2e;
+  border: 2px solid white;
+  transition: all 0.3s ease;
+}
+
+/* Override default link styles */
+.get-started-btn:hover,
+.get-started-btn:focus,
+.get-started-btn:active,
+.get-started-btn:visited {
+  color: #0f2d1a;
+  text-decoration: none;
+  background-color: white;
+  transform: translateY(-2px);
+}
+
+/* Remove old fact cards section */
+.plant-facts {
+  display: none;
+}
+
+/* Features Section */
+.features-section {
+  padding: 5rem 5%;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.features-section h2 {
+  font-size: 2.5rem;
+  color: #1a4d2e;
+  margin-bottom: 3rem;
+}
+
+.features-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.feature-card {
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  background-color: #e6f7e9;
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+}
+
+.feature-icon i {
+  font-size: 30px;
+  color: #1a4d2e;
+}
+
+.feature-card h3 {
+  font-size: 1.5rem;
+  color: #1a4d2e;
+  margin-bottom: 1rem;
+}
+
+.feature-card p {
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Categories Section */
+.categories-section {
+  padding: 5rem 5%;
+  background-color: #f8f9fa;
+}
+
+.categories-section h2 {
+  font-size: 2.5rem;
+  color: #1a4d2e;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.categories-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.category-card {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  height: 400px;
+}
+
+.category-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* Replace category images with placeholders */
+.placeholder-category-image {
+  background-color: #e6f7e9;
+  height: 70%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #1a4d2e;
+  font-size: 3rem;
+}
+
+.placeholder-category-image p {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+.category-card:hover img {
+  transform: scale(1.05);
+}
+
+.category-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.category-content h3 {
+  font-size: 1.5rem;
+  color: #1a4d2e;
+  margin-bottom: 0.5rem;
+}
+
+.category-content p {
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+  padding: 5rem 5%;
+  background-color: #fff;
+  text-align: center;
+}
+
+.testimonials-section h2 {
+  font-size: 2.5rem;
+  color: #1a4d2e;
+  margin-bottom: 3rem;
+}
+
+.testimonials-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.testimonial-card {
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: #f8f9fa;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.quote-icon {
+  font-size: 2rem;
+  color: #9fdf9f;
+  margin-bottom: 1rem;
+}
+
+.testimonial-text {
+  font-style: italic;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-author {
+  margin-top: 1.5rem;
+}
+
+.author-name {
+  font-weight: bold;
+  color: #1a4d2e;
+}
+
+.author-title {
+  color: #777;
+  font-size: 0.9rem;
+}
+
+/* Newsletter Section */
+.newsletter-section {
+  padding: 4rem 5%;
+  background-color: #1a4d2e;
+}
+
+.newsletter-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.newsletter-content {
+  width: 60%;
+}
+
+.newsletter-content h2 {
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.newsletter-content p {
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.newsletter-form {
+  display: flex;
+  width: 40%;
+  min-width: 300px;
+  gap: 0.5rem;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 0.8rem 1rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* Buttons */
+.btn {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.primary-btn {
+  background-color: #1a4d2e;
+  color: #fff;
+}
+
+.primary-btn:hover {
+  background-color: #143d25;
+  transform: translateY(-2px);
+}
+
+.secondary-btn {
+  background-color: #9fdf9f;
+  color: #1a4d2e;
+}
+
+.secondary-btn:hover {
+  background-color: #8acf8a;
+  transform: translateY(-2px);
+}
+
+.outline-btn {
+  background-color: transparent;
+  color: #1a4d2e;
+  border: 2px solid #1a4d2e;
+}
+
+.outline-btn:hover {
+  background-color: #1a4d2e;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Remove all margins, padding, and make components fit perfectly */
+main,
+section,
+.content-wrapper,
+.footer-container {
+  margin: 0; /* Change from margin-top: 0 to margin: 0 */
+  padding: 0; /* Change from padding-top: 0 to padding: 0 */
+}
+
+/* Footer styles adjustment if needed */
+footer,
+.footer {
+  margin-top: 0 !important;
+  flex-shrink: 0; /* Prevent footer from shrinking */
+}
+
+/* Add these styles to ensure the footer is visible */
+.footer {
+  display: block;
+  background-color: #0f2d1a;
+  color: white;
+  padding: 15px 0;
+  text-align: center;
+  width: 100%;
+  margin-top: 0;
+  position: relative;
+  z-index: 10;
+}
+
+.hero-section {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Make sure the container properly includes the footer */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Divider lines for visual separation */
+.page-divider {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(15, 45, 26, 0.3),
+    transparent
+  );
+  margin: 0;
+  padding: 0;
+}
+
+.top-divider {
+  /* Position it right below the navbar */
+  position: relative;
+  z-index: 5;
+}
+
+.bottom-divider {
+  /* Position it right above the footer */
+  position: relative;
+  z-index: 5;
+  margin-top: auto;
+}
+
+/* Divider styles */
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .hero-section {
+    text-align: center;
+    padding: 2rem 5%;
+  }
+
+  .hero-content h1 {
+    font-size: 2.8rem;
+  }
+
+  .hero-content p {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+
+  .features-container,
+  .categories-container,
+  .testimonials-container {
+    grid-template-columns: 1fr;
+  }
+}
