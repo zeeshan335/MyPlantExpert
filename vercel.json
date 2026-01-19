@@ -1,6 +1,18 @@
 {
   "version": 2,
-  "buildCommand": "cd Frontend && npm install && npm run build",
-  "outputDirectory": "Frontend/dist",
-  "installCommand": "echo 'Skipping root install'"
+  "builds": [
+    {
+      "src": "Frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
 }
